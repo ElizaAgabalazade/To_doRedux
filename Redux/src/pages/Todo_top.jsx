@@ -8,6 +8,14 @@ const Todo_top = () => {
 
   const dispatch = useDispatch();
 
+    const sentInp = (event) =>{
+      if(event.key === 'Enter'){
+         dispatch(addTodo())
+      }
+    }
+
+
+
   return (
     <>
     <div className='top_box'>
@@ -17,12 +25,13 @@ const Todo_top = () => {
         className='inp'
         value={inpVal}
         onChange={(e) => setInpVal(e.target.value)}
+        onKeyDown={sentInp}
 
       />
       <button className='btn'
         onClick={
           () => {
-            dispatch(addTodo(inpVal)),
+            dispatch(addTodo(inpVal))
             setInpVal("");
           }
 

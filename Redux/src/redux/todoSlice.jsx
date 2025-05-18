@@ -16,13 +16,11 @@ export const todoSlice = createSlice({
             //     return;
             // }
 
-            const request = 
-                {
+            const request = {
                 id: Math.floor(Math.random() * 99999),
                 content: action.payload
             }
-          state.todo.push(request);
-            // console.log([...state.todo]); // və ya
+            state.todo.push(request);
 
         }
 
